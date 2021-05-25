@@ -39,6 +39,13 @@ public class Candidates {
 	public String numOfCandidates() {
 		return Utils.waitForElementPresence(driver, 10, By.xpath("//div[@id='fromToOf']/div")).getText().substring(10);
 	}
+	
+	//Toast message (alert after saving or deleting a candidate) writing them for later comparring
+	//the text could be : Successfully Saved
+	//or Successfully Deleted
+	public String toastMessage() {
+		return Utils.waitForElementPresence(driver, 10, By.xpath("//*[@class='toast-message']")).getText();
+	}
 
 	// action of printing out the number of candidates
 	// first we select the number of rows per page we want to show, after we are
