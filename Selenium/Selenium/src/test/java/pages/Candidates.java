@@ -34,7 +34,7 @@ public class Candidates {
 		return Utils.waitForElementPresence(driver, 10, By.xpath("//a[@id='addItemBtn']"));
 	}
 
-	// In order to print out the number of candidates we are using substring method
+		// In order to print out the number of candidates we are using substring method
 	// explained more in the comments bellow
 	public String numOfCandidates() {
 		return Utils.waitForElementPresence(driver, 10, By.xpath("//div[@id='fromToOf']/div")).getText().substring(10);
@@ -43,10 +43,11 @@ public class Candidates {
 	// action of printing out the number of candidates
 	// first we select the number of rows per page we want to show, after we are
 	// sure that the first 9 characters of the string we are using are not gonna
-	// change we can print out the total number of candidates
+	// change we can convert the string to int and print out the total number of candidates.
 	public void printNumOfCandidates() {
 		arrowDropdown().click();
 		show10Rows().click();
+		Integer.parseInt(numOfCandidates());
 		System.out.println(numOfCandidates());
 	}
 
