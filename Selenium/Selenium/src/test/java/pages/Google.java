@@ -27,7 +27,7 @@ public class Google {
 
 	// the first result on the google results page
 	public List<WebElement> firstResult() {
-		return Utils.waitForElementsPresence(driver, 10, (By.xpath("(//*[@id ='rso'] //a)[0]")));
+		return Utils.waitForElementsPresence(driver, 10, By.xpath("(//*[@id ='rso'] //a)[0]"));
 
 	}
 
