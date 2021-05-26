@@ -1,8 +1,11 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
 public class Interactions {
 
@@ -15,8 +18,8 @@ public class Interactions {
 
 	// Droppable card in interactions section.
 	public WebElement droppableCard() {
-		return Utils.waitForElementPresence(driver, 10,
-				By.xpath("//*[@id = 'item-3']//*[contains(text(), 'Droppable')]"));
+		return Utils.waitToBeClickable(driver, 50,
+				By.xpath("//*[@class='element-list collapse show']//li[@id='item-3']"));
 	}
 
 	// Draggable element
@@ -29,14 +32,14 @@ public class Interactions {
 
 	// Droppable element
 	public WebElement droppableElement() {
-		return Utils.waitForElementPresence(driver, 10,
+		return Utils.waitForElementPresence(driver, 20,
 				By.xpath("//div[@id = 'droppableExample-tabpane-simple']//div[@id = 'droppable']"));
 	}
 
 	// the text of the drop here element which we will use later to assert if it has
 	// changed
 	public String dropHereText() {
-		return Utils.waitForElementPresence(driver, 10, By.xpath("//div[@id = 'droppableExample-tabpane-simple']//p"))
+		return Utils.waitForElementPresence(driver, 20, By.xpath("//div[@id = 'droppableExample-tabpane-simple']//p"))
 				.getText();
 	}
 
@@ -46,5 +49,16 @@ public class Interactions {
 
 	}
 
+	public void dragAndDropAction() {
+		// Creating object of Actions class to build composite actions
+		Actions builder = new Actions(driver);
+
+		// Building a drag and drop action
+		Action dragAndDrop = builder.clickAndHold(draggableElement()).moveToElement(droppableElement())
+				.release(droppableElement()).build();
+
+		// Performing the drag and drop action
+		dragAndDrop.perform();
+	}
 }
 //
