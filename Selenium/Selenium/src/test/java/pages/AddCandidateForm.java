@@ -1,10 +1,15 @@
 package pages;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
+
+import javax.print.DocFlavor.CHAR_ARRAY;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import okio.Timeout;
 
 public class AddCandidateForm {
 
@@ -42,16 +47,16 @@ public class AddCandidateForm {
 
 	// search of vacancy dropdown menu
 	public WebElement vacancySearch() {
-		return Utils.waitForElementPresence(driver, 10, By.xpath("//*[@id='dropdownObjectSearch_vdMPR']//input"));
+		return Utils.waitForElementPresence(driver, 10, By.xpath("//*[@id='modalAddCandidate']//input[@class='employee-search validate']"));
 	}
 
 	// getting the first option based on the words we typed in (since the style of
 	// the HTML elements is changeable we are looking for the first option that has
 	// its style set to display because we only need the option that corresponds
 	// with our search input text)
-	public WebElement searchedVacancyOption() {
+	public WebElement searchedVacancyOption(String searchWord) {
 		return Utils.waitForElementPresence(driver, 10,
-				By.xpath("(//*[@id='dropdownObjectSearch_vdMPR']//li[@style='display: list-item;'])[0]"));
+				By.xpath("//*[@id='modalAddCandidate']//p[contains(text(),'" +searchWord + "')]"));
 	}
 
 	// Software QA Engineer option from the vacancy dropdown menu
@@ -87,9 +92,12 @@ public class AddCandidateForm {
 	}
 
 	// the action of uploading the resume file from my root folder
-	public void uploadResume() {
+	public void uploadResume() throws InterruptedException {
 		WebElement choosefile = addResume();
+		System.out.println(getFile());
+	    Thread.sleep(2000);
 		choosefile.sendKeys(getFile());
+		
 	}
 
 	// setting the first name
@@ -114,11 +122,11 @@ public class AddCandidateForm {
 	}
 
 	// setting the vacancy search field and selecting the typed option
-	public void setVacancy(String vacancyInput) {
+	public void setVacancy(String vacancyInput, String searchWord) {
 		this.vacancyDropdown().click();
-		this.vacancySearch().clear();
+//		this.vacancySearch().clear();
 		this.vacancySearch().sendKeys(vacancyInput);
-		this.searchedVacancyOption().click();
+		this.searchedVacancyOption(searchWord).click();
 	}
 
 	// setting the date
@@ -128,12 +136,12 @@ public class AddCandidateForm {
 	}
 
 	// The action of adding new candidate
-	public void addNewCandidate(String fName, String lName, String email, String vacancyInput) {
+	public void addNewCandidate(String fName, String lName, String email, String vacancyInput, String searchWord) throws InterruptedException {
 		uploadResume();
 		setFirstName(fName);
 		setLastName(lName);
 		setEmail(email);
-		setVacancy(vacancyInput);
+		setVacancy(vacancyInput, searchWord);
 		setDate();
 		saveBtn().click();
 	}

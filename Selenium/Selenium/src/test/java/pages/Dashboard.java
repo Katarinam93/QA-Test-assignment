@@ -15,7 +15,7 @@ public class Dashboard {
 
 	// the card with the recruitment dropdown menu
 	public WebElement recruitmentCard() {
-		return Utils.waitForElementPresence(driver, 10, By.xpath("//*[@id ='menu_recruitment_viewRecruitmentModule']"));
+		return Utils.waitForElementPresence(driver, 50, By.xpath("//*[@id ='menu_recruitment_viewRecruitmentModule']"));
 	}
 
 	// the card that opens the candidates page

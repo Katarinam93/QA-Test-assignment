@@ -21,7 +21,7 @@ public class Candidates {
 
 	// rows per page dropdown
 	public WebElement arrowDropdown() {
-		return Utils.waitForElementPresence(driver, 10, By.xpath("//*[@data-activates ='dropdown1']"));
+		return Utils.waitForElementPresence(driver, 30, By.xpath("//*[@data-activates ='dropdown1']"));
 	}
 
 	// rows per page dropdown
@@ -37,7 +37,7 @@ public class Candidates {
 		// In order to print out the number of candidates we are using substring method
 	// explained more in the comments bellow
 	public String numOfCandidates() {
-		return Utils.waitForElementPresence(driver, 10, By.xpath("//div[@id='fromToOf']/div")).getText().substring(10);
+		return Utils.waitForElementPresence(driver, 50, By.xpath("//div[@id='fromToOf']/div")).getText().substring(10);
 	}
 	
 	//Toast message (alert after saving or deleting a candidate) writing them for later comparring
@@ -52,8 +52,8 @@ public class Candidates {
 	// sure that the first 9 characters of the string we are using are not gonna
 	// change we can convert the string to int and print out the total number of candidates.
 	public void printNumOfCandidates() {
-		arrowDropdown().click();
-		show10Rows().click();
+//		arrowDropdown().click();
+//		show10Rows().click();
 		Integer.parseInt(numOfCandidates());
 		System.out.println(numOfCandidates());
 	}
