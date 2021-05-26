@@ -38,6 +38,7 @@ public class Test3 {
 		candidates.addNewCandidate().click();
 		addCand.addNewCandidate("QA", "Automation", "email@email.com", "QA", "QA");
 		
+		//Now we are asserting if we get the success message 
 		String actualMessage = candidates.toastMessage();
 		String expectedMessage = "Successfully Saved";
 		
