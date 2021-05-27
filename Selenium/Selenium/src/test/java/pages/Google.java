@@ -39,7 +39,7 @@ public class Google {
 
 	// ------------------------------------------------------------------------------------------------
 	// Setting the input text field
-	// Found it easier to put enter instead of clicking search btn, cause in the test1
+	// Found it easier to put enter instead of clicking the search btn, cause in the test1
 	// it gets obstructed by google search suggestions
 	public void setInputField(String googleSearchInput) {
 		WebElement inputSearch = getInputField();

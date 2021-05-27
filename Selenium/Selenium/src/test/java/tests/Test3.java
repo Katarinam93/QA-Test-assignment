@@ -1,5 +1,6 @@
 package tests;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -18,7 +19,6 @@ import pages.Candidates;
 import pages.Dashboard;
 import pages.LoginPageOrangeHRM;
 
-
 @TestInstance(Lifecycle.PER_CLASS)
 public class Test3 {
 	WebDriver driver;
@@ -26,23 +26,66 @@ public class Test3 {
 	Dashboard dashboard;
 	Candidates candidates;
 	AddCandidateForm addCand;
-	
-	
+
 	@Test
 	public void candidate() throws InterruptedException {
+
+		// logging in(since the form is autofilled we are just pressing the login
+		// button)
 		lpOrange.loginBtn().click();
+
+		// clicking the recruitment option
 		dashboard.recruitmentCard().click();
+
+		// clicking on the candidates card
 		dashboard.candidates().click();
+
+		// switching to IFrame
 		driver.switchTo().frame("noncoreIframe");
-		candidates.printNumOfCandidates();
+
+		// we are printing out the num of candidates before we add a new one
+		int numOfCandidatesBefore = candidates.numOfCandidatesInt();
+		System.out.println(numOfCandidatesBefore);
+
+		// clicking the addNewCandidate button
 		candidates.addNewCandidate().click();
+
+		// adding a new candidate action from the page AddCandidateForm
 		addCand.addNewCandidate("QA", "Automation", "email@email.com", "QA", "QA");
-		
-		//Now we are asserting if we get the success message 
+
+		// Now we are asserting if we get the success message for creating a new
+		// candidate
 		String actualMessage = candidates.toastMessage();
 		String expectedMessage = "Successfully Saved";
-		
+
 		assertEquals(expectedMessage, actualMessage);
+
+		// we are printing the num of candidates after adding a new one
+		int numOfCandidatesRightNow = candidates.numOfCandidatesInt();
+		System.out.println(numOfCandidatesRightNow);
+
+		// we are asserting that the number has increased
+		assertTrue("The number should be the number of candidates + 1",
+				numOfCandidatesRightNow == (numOfCandidatesBefore + 1));
+
+		// performing the action of our candidate deletion
+		candidates.deleteCandidate();
+
+		// I needed longer time for the page to load again after deleting the candidate
+		// and since the elements I needed after the deletion are already present I
+		// wasn't able to find another way.
+		Thread.sleep(2000);
+
+		// asserting that we successfully deleted the candidate
+		assertTrue("The message should be Successfully Deleted",
+				candidates.toastMessage().equals("Successfully Deleted"));
+
+		int numOfCandidatesAfter = candidates.numOfCandidatesInt();
+		System.out.println(numOfCandidatesAfter);
+
+		// asserting that the number of candidates is smaller by 1
+		assertTrue("The number should be the numOfCandidatesRightNow - 1",
+				numOfCandidatesAfter == (numOfCandidatesRightNow - 1));
 	}
 
 	@BeforeAll
@@ -52,7 +95,10 @@ public class Test3 {
 
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+
+		// in here the wait time for the page to load is a lot longer than in other
+		// tests in order to be sure that the page is surely gonna load
+		driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		driver.get("https://orangehrm-demo-6x.orangehrmlive.com/");
 
@@ -60,10 +106,14 @@ public class Test3 {
 		dashboard = new Dashboard(driver);
 		candidates = new Candidates(driver);
 		addCand = new AddCandidateForm(driver);
-		
+
 	}
+
 	@AfterAll
 	public void afterSuite() {
+
+		// logging out and closing the window
+		dashboard.logout();
 		driver.close();
 	}
 }

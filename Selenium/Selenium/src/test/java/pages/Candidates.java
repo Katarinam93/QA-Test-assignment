@@ -28,34 +28,60 @@ public class Candidates {
 	public WebElement show10Rows() {
 		return Utils.waitForElementPresence(driver, 10, By.xpath("//a[contains(text(),'10')]"));
 	}
-	
-	//Add new candidate button
+
+	// Add new candidate button
 	public WebElement addNewCandidate() {
 		return Utils.waitForElementPresence(driver, 10, By.xpath("//a[@id='addItemBtn']"));
 	}
 
-		// In order to print out the number of candidates we are using substring method
-	// explained more in the comments bellow
+	// In order to print out the number of candidates we are using substring method
+	// Since the number of candidates shown is automatically 50 per page, we can be
+	// sure that the first 9 characters of the string we are using are not gonna
+	// change so we can convert the string to int and later in the tests print out
+	// the total number of
+	// candidates.
 	public String numOfCandidates() {
 		return Utils.waitForElementPresence(driver, 50, By.xpath("//div[@id='fromToOf']/div")).getText().substring(10);
 	}
-	
-	//Toast message (alert after saving or deleting a candidate) writing them for later comparring
-	//the text could be : Successfully Saved
-	//or Successfully Deleted
+
+	// we are parsing the string above to be able to subtract and add to it in later
+	// tests
+	public int numOfCandidatesInt() {
+		return Integer.parseInt(numOfCandidates());
+	}
+
+	// Toast message (alert after saving or deleting a candidate) writing them for
+	// later comparing the text could be : Successfully Saved
+	// or Successfully Deleted
 	public String toastMessage() {
-		return Utils.waitForElementPresence(driver, 10, By.xpath("//*[@class='toast-message']")).getText();
+		return Utils.waitForElementPresence(driver, 20, By.xpath("//*[@class='toast-message']")).getText();
 	}
 
-	// action of printing out the number of candidates
-	// first we select the number of rows per page we want to show, after we are
-	// sure that the first 9 characters of the string we are using are not gonna
-	// change we can convert the string to int and print out the total number of candidates.
-	public void printNumOfCandidates() {
-//		arrowDropdown().click();
-//		show10Rows().click();
-		Integer.parseInt(numOfCandidates());
-		System.out.println(numOfCandidates());
+	public WebElement checkboxOfOurCandidate() {
+		return Utils.waitForElementPresence(driver, 10, By.xpath("(//td//label)[1]"));
 	}
 
+	// three dots in the upper right corner of the page
+	public WebElement dotsDropdownMenu() {
+		return Utils.waitForElementPresence(driver, 10, By.xpath("//*[@id ='ohrmList_Menu']"));
+	}
+
+	// the delete button from the dropdown menu
+	public WebElement deleteBtn() {
+		return Utils.waitToBeClickable(driver, 10,
+				By.xpath("//*[@id='ohrmList_dropDownMenu']//a[@id='deleteItemBtn']"));
+	}
+
+	// confirming that we want to delete the candidate
+	public WebElement confirmDelete() {
+		return Utils.waitToBeClickable(driver, 20, By.xpath("//a[contains(text(), 'yes, delete')]"));
+	}
+
+	// performing the delete action
+	public void deleteCandidate() {
+		this.checkboxOfOurCandidate().click();
+		this.dotsDropdownMenu().click();
+		this.deleteBtn().click();
+		this.confirmDelete().click();
+	}
 }

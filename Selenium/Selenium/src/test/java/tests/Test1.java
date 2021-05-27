@@ -84,7 +84,7 @@ public class Test1 {
 
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(3, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		driver.get("https://www.google.com/");
 

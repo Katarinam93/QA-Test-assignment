@@ -22,7 +22,7 @@ public class AddCandidateForm {
 
 	// we are getting the resume button
 	public WebElement addResume() {
-		return Utils.waitForElementPresence(driver, 10, By.xpath("//*[@id='addCandidate_resume']"));
+		return Utils.waitForElementPresence(driver, 15, By.xpath("//*[@id='addCandidate_resume']"));
 	}
 
 	// we are getting the first name input field
@@ -92,10 +92,9 @@ public class AddCandidateForm {
 	}
 
 	// the action of uploading the resume file from my root folder
-	public void uploadResume() throws InterruptedException {
+	public void uploadResume() {
 		WebElement choosefile = addResume();
 		System.out.println(getFile());
-	    Thread.sleep(2000);
 		choosefile.sendKeys(getFile());
 		
 	}
@@ -137,12 +136,12 @@ public class AddCandidateForm {
 
 	// The action of adding new candidate
 	public void addNewCandidate(String fName, String lName, String email, String vacancyInput, String searchWord) throws InterruptedException {
-		uploadResume();
 		setFirstName(fName);
 		setLastName(lName);
 		setEmail(email);
 		setVacancy(vacancyInput, searchWord);
 		setDate();
+		uploadResume();
 		saveBtn().click();
 	}
 }

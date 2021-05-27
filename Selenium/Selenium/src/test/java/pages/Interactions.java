@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
@@ -32,14 +31,14 @@ public class Interactions {
 
 	// Droppable element
 	public WebElement droppableElement() {
-		return Utils.waitForElementPresence(driver, 20,
+		return Utils.waitForElementPresence(driver, 30,
 				By.xpath("//div[@id = 'droppableExample-tabpane-simple']//div[@id = 'droppable']"));
 	}
 
 	// the text of the drop here element which we will use later to assert if it has
 	// changed
 	public String dropHereText() {
-		return Utils.waitForElementPresence(driver, 20, By.xpath("//div[@id = 'droppableExample-tabpane-simple']//p"))
+		return Utils.waitForElementPresence(driver, 30, By.xpath("//div[@id = 'droppableExample-tabpane-simple']//p"))
 				.getText();
 	}
 
