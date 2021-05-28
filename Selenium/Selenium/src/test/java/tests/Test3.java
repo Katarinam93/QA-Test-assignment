@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Rule;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -20,7 +19,6 @@ import pages.Dashboard;
 import pages.LoginPageOrangeHRM;
 import setup.BaseClass;
 import setup.Log;
-import setup.ScreenshotTestRule;
 
 @TestInstance(Lifecycle.PER_CLASS)
 public class Test3 extends BaseClass {
@@ -30,8 +28,8 @@ public class Test3 extends BaseClass {
 	Candidates candidates;
 	AddCandidateForm addCand;
 
-	@Rule
-    public ScreenshotTestRule screenshotTestRule = new ScreenshotTestRule();
+//	@Rule
+//    public ScreenshotTestRule screenshotTestRule = new ScreenshotTestRule();
 	
 	@Test
 	public void candidate() throws InterruptedException {

@@ -5,7 +5,6 @@ import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Rule;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -15,13 +14,12 @@ import org.openqa.selenium.WebDriver;
 import pages.Google;
 import setup.BaseClass;
 import setup.Log;
-import setup.ScreenshotTestRule;
 
 @TestInstance(Lifecycle.PER_CLASS)
 public class Test2 extends BaseClass {
 	
-	@Rule
-    public ScreenshotTestRule screenshotTestRule = new ScreenshotTestRule();
+//	@Rule
+//    public ScreenshotTestRule screenshotTestRule = new ScreenshotTestRule();
 	
 	WebDriver driver;
 	Google google;

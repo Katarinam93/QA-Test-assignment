@@ -57,3 +57,20 @@
 [INFO ] 2021-05-28 08:49:19.964 [main] Log - Clicking on the first result and ariving on https://demoqa.com/
 [INFO ] 2021-05-28 08:49:21.959 [main] Log - Draging and droping element
 [INFO ] 2021-05-28 08:49:23.391 [main] Log - Performing a hover action
+[INFO ] 2021-05-28 08:56:49.097 [main] Log - Performing a Google search and ariving on https://www.google.com/search?q=cheese&source=hp&ei=K5SwYO24J6yD9u8P96Cs2AM&iflsig=AINFCbYAAAAAYLCiOymLZpB3x3yGgypyAZv0dZufSgO8&oq=cheese&gs_lcp=Cgdnd3Mtd2l6EANQiQRYqwRg8ARoAHAAeACAAQCIAQCSAQCYAQCgAQGqAQdnd3Mtd2l6&sclient=gws-wiz&ved=0ahUKEwit-puH5uvwAhWsgf0HHXcQCzsQ4dUDCAc&uact=5
+[INFO ] 2021-05-28 09:19:47.274 [main] Log - Performing a Google search and ariving on https://www.google.com/search?q=demoqa.com&source=hp&ei=jpmwYKWwIZnekwWZpITgAw&iflsig=AINFCbYAAAAAYLCnnqlR29QdOe8vIkPidxqkB5giyhqi&oq=demoqa.com&gs_lcp=Cgdnd3Mtd2l6EANQoARY1QRgswVoAHAAeACAAVSIAaABkgEBMpgBAKABAaoBB2d3cy13aXo&sclient=gws-wiz&ved=0ahUKEwilr92Y6-vwAhUZ76QKHRkSATwQ4dUDCAc&uact=5
+[INFO ] 2021-05-28 09:19:48.280 [main] Log - Clicking on the first result and ariving on https://demoqa.com/
+[INFO ] 2021-05-28 09:19:50.363 [main] Log - Draging and droping element
+[INFO ] 2021-05-28 09:19:51.905 [main] Log - Performing a hover action
+[INFO ] 2021-05-28 09:19:57.422 [main] Log - Performing a Google search and ariving on https://www.google.com/search?q=cheese&source=hp&ei=mJmwYNKqFI3nkgX9jYn4CQ&iflsig=AINFCbYAAAAAYLCnqBrnM68M9bktb-o-zhHelVSaKUuV&oq=cheese&gs_lcp=Cgdnd3Mtd2l6EANQsANY0gNgmQRoAHAAeACAAQCIAQCSAQCYAQCgAQGqAQdnd3Mtd2l6&sclient=gws-wiz&ved=0ahUKEwjS1rKd6-vwAhWNs6QKHf1GAp8Q4dUDCAc&uact=5
+[INFO ] 2021-05-28 09:20:05.325 [main] Log - Navigating to https://orangehrm-demo-6x.orangehrmlive.com/
+[INFO ] 2021-05-28 09:20:15.780 [main] Log - Logging in and ariving on https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard
+[INFO ] 2021-05-28 09:20:16.257 [main] Log - Clicking on candidates card and ariving on https://orangehrm-demo-6x.orangehrmlive.com/client/#/noncore/recruitment/viewCandidates
+[INFO ] 2021-05-28 09:20:20.460 [main] Log - Entering a first name
+[INFO ] 2021-05-28 09:20:20.901 [main] Log - Entering a last name
+[INFO ] 2021-05-28 09:20:21.278 [main] Log - Entering email
+[INFO ] 2021-05-28 09:20:22.617 [main] Log - Setting vacansy email
+[INFO ] 2021-05-28 09:20:23.198 [main] Log - Setting date
+[INFO ] 2021-05-28 09:20:23.344 [main] Log - Adding a resume
+[INFO ] 2021-05-28 09:20:26.963 [main] Log - Saving new candidate
+[INFO ] 2021-05-28 09:20:28.744 [main] Log - Deleting the canidate
