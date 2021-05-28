@@ -46,8 +46,7 @@ public class Widgets {
 	public void performingTheHoverAction(WebElement hoverElement) {
 		
 		 Actions builder = new Actions(driver);
-		 builder.moveToElement(hoverElement).build().perform();
+		 builder.moveToElement(hoverElement).perform();
 		 System.out.println(popUpText());
-
 	}
 }

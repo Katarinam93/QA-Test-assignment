@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import okio.Timeout;
+import setup.Log;
 
 public class AddCandidateForm {
 
@@ -96,7 +97,7 @@ public class AddCandidateForm {
 		WebElement choosefile = addResume();
 		System.out.println(getFile());
 		choosefile.sendKeys(getFile());
-		
+		Log.info("Adding a resume");
 	}
 
 	// setting the first name
@@ -104,6 +105,7 @@ public class AddCandidateForm {
 		WebElement firstName = getFirstName();
 		firstName.clear();
 		firstName.sendKeys(fName);
+		Log.info("Entering a first name");
 	}
 
 	// setting the last name
@@ -111,6 +113,7 @@ public class AddCandidateForm {
 		WebElement lastName = getLastName();
 		lastName.clear();
 		lastName.sendKeys(lName);
+		Log.info("Entering a last name");
 	}
 
 	// setting the email
@@ -118,6 +121,7 @@ public class AddCandidateForm {
 		WebElement sEmail = getEmail();
 		sEmail.clear();
 		sEmail.sendKeys(email);
+		Log.info("Entering email");
 	}
 
 	// setting the vacancy search field and selecting the typed option
@@ -126,12 +130,14 @@ public class AddCandidateForm {
 //		this.vacancySearch().clear();
 		this.vacancySearch().sendKeys(vacancyInput);
 		this.searchedVacancyOption(searchWord).click();
+		Log.info("Setting vacansy email");
 	}
 
 	// setting the date
 	public void setDate() {
 		date().click();
 		dateTodayBtn().click();
+		Log.info("Setting date");
 	}
 
 	// The action of adding new candidate
@@ -143,5 +149,6 @@ public class AddCandidateForm {
 		setDate();
 		uploadResume();
 		saveBtn().click();
+		Log.info("Saving new candidate");
 	}
 }

@@ -2,20 +2,27 @@ package tests;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Rule;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import pages.Google;
+import setup.BaseClass;
+import setup.Log;
+import setup.ScreenshotTestRule;
 
 @TestInstance(Lifecycle.PER_CLASS)
-public class Test2 {
+public class Test2 extends BaseClass {
+	
+	@Rule
+    public ScreenshotTestRule screenshotTestRule = new ScreenshotTestRule();
+	
 	WebDriver driver;
 	Google google;
 
@@ -24,6 +31,7 @@ public class Test2 {
 
 		// performing the search action from the page Google with the word cheese
 		google.searchAction("cheese");
+		Log.info("Performing a Google search and ariving on " + driver.getCurrentUrl());
 
 		String expectedNumOfResults = "777";
 		String actualNumOfResults = google.resultStats();
@@ -33,9 +41,8 @@ public class Test2 {
 	}
 
 	@BeforeAll
-	public void beforeSuite() {
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		driver = new ChromeDriver();
+	public void beforeSuite() throws IOException {
+		driver = initDriver();
 
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
@@ -46,6 +53,7 @@ public class Test2 {
 		google = new Google(driver);
 
 	}
+	
 
 	@AfterAll
 	public void afterSuite() {

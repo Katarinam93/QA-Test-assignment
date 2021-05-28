@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import setup.Log;
+
 public class Candidates {
 
 	private WebDriver driver;
@@ -83,5 +85,6 @@ public class Candidates {
 		this.dotsDropdownMenu().click();
 		this.deleteBtn().click();
 		this.confirmDelete().click();
+		Log.info("Deleting the canidate");
 	}
 }

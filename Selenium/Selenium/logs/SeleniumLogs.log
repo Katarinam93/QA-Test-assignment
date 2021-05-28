@@ -1,0 +1,59 @@
+[INFO ] 2021-05-28 07:08:21.862 [main] Log - Navigating to https://orangehrm-demo-6x.orangehrmlive.com/
+[INFO ] 2021-05-28 07:08:25.053 [main] Log - Logging in and ariving on https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard
+[INFO ] 2021-05-28 07:08:25.444 [main] Log - Clicking on candidates card and ariving on https://orangehrm-demo-6x.orangehrmlive.com/client/#/noncore/recruitment/viewCandidates
+[INFO ] 2021-05-28 07:08:29.324 [main] Log - Entering a first name
+[INFO ] 2021-05-28 07:08:29.706 [main] Log - Entering a last name
+[INFO ] 2021-05-28 07:08:30.132 [main] Log - Entering email
+[INFO ] 2021-05-28 07:08:31.262 [main] Log - Setting vacansy email
+[INFO ] 2021-05-28 07:08:31.922 [main] Log - Setting date
+[INFO ] 2021-05-28 07:08:32.050 [main] Log - Adding a resume
+[INFO ] 2021-05-28 07:08:35.538 [main] Log - Saving new candidate
+[INFO ] 2021-05-28 07:08:37.352 [main] Log - Deleting the canidate
+[INFO ] 2021-05-28 08:00:07.355 [main] Log - Performing a Google search and ariving on https://www.google.com/search?q=demoqa.com&source=hp&ei=44awYL3vAZb-7_UP75a-qAE&iflsig=AINFCbYAAAAAYLCU8zsqzWalVRcTxrrUSxk437eTF1yO&oq=demoqa.com&gs_lcp=Cgdnd3Mtd2l6EANQxQNYlQRgxQRoAHAAeACAAQCIAQCSAQCYAQCgAQGqAQdnd3Mtd2l6&sclient=gws-wiz&ved=0ahUKEwj97Nax2evwAhUW_7sIHW-LDxUQ4dUDCAc&uact=5
+[INFO ] 2021-05-28 08:00:08.308 [main] Log - Clicking on the first result and ariving on https://demoqa.com/
+[INFO ] 2021-05-28 08:00:10.320 [main] Log - Draging and droping element
+[INFO ] 2021-05-28 08:00:11.716 [main] Log - Performing a hover action
+[INFO ] 2021-05-28 08:01:31.254 [main] Log - Performing a Google search and ariving on https://www.google.com/search?q=cheese&source=hp&ei=NYewYOeFK8SB9u8PirSdmAE&iflsig=AINFCbYAAAAAYLCVRdLsEdwNHTotMQrZbzZ4HaaEyefK&oq=cheese&gs_lcp=Cgdnd3Mtd2l6EANQxwNY5QNgmwRoAHAAeACAAQCIAQCSAQCYAQCgAQGqAQdnd3Mtd2l6&sclient=gws-wiz&ved=0ahUKEwin9IzZ2evwAhXEgP0HHQpaBxMQ4dUDCAc&uact=5
+[INFO ] 2021-05-28 08:08:14.534 [main] Log - Performing a Google search and ariving on https://www.google.com/search?q=cheese&source=hp&ei=yYiwYPmVCP387_UPhuyO4Ac&iflsig=AINFCbYAAAAAYLCW2QeukLq-mkEXe9dRlct1ReItVxG4&oq=cheese&gs_lcp=Cgdnd3Mtd2l6EANQwQNY5gNgngRoAHAAeACAAQCIAQCSAQCYAQCgAQGqAQdnd3Mtd2l6&sclient=gws-wiz&ved=0ahUKEwi5nryZ2-vwAhV9_rsIHQa2A3wQ4dUDCAc&uact=5
+[INFO ] 2021-05-28 08:30:17.167 [main] Log - Performing a Google search and ariving on https://www.google.com/search?q=cheese&source=hp&ei=842wYIvUMou4sAfKiICwCA&iflsig=AINFCbYAAAAAYLCcA-rSDfHpbk6iRolWq2-l302JCiDi&oq=cheese&gs_lcp=Cgdnd3Mtd2l6EANQjgNYvANg7gNoAHAAeACAAQCIAQCSAQCYAQCgAQGqAQdnd3Mtd2l6&sclient=gws-wiz&ved=0ahUKEwjLmZeQ4OvwAhULHOwKHUoEAIYQ4dUDCAc&uact=5
+[INFO ] 2021-05-28 08:41:11.868 [main] Log - Performing a Google search and ariving on https://www.google.com/search?q=cheese&source=hp&ei=gpCwYKPbGoT97_UPv7uf4Ao&iflsig=AINFCbYAAAAAYLCeks-K3uf7EkNPvk7c7WlWRd81SPYa&oq=cheese&gs_lcp=Cgdnd3Mtd2l6EANQ0gNY9ANgsQRoAHAAeACAAQCIAQCSAQCYAQCgAQGqAQdnd3Mtd2l6&sclient=gws-wiz&ved=0ahUKEwijpKnI4uvwAhWE_rsIHb_dB6wQ4dUDCAc&uact=5
+[INFO ] 2021-05-28 08:41:56.592 [main] Log - Performing a Google search and ariving on https://www.google.com/search?q=cheese&source=hp&ei=r5CwYPqpH7iL9u8P_dWc6AY&iflsig=AINFCbYAAAAAYLCev3QiHFFBbxEF9RR-RuZEVUUII471&oq=cheese&gs_lcp=Cgdnd3Mtd2l6EANQ3wNY-QNgowRoAHAAeACAAQCIAQCSAQCYAQCgAQGqAQdnd3Mtd2l6&sclient=gws-wiz&ved=0ahUKEwi6vejd4uvwAhW4hf0HHf0qB20Q4dUDCAc&uact=5
+[INFO ] 2021-05-28 08:42:37.502 [main] Log - Performing a Google search and ariving on https://www.google.com/search?q=cheese&source=hp&ei=15CwYPe6KuSL9u8PzJOsiAQ&iflsig=AINFCbYAAAAAYLCe51gBQTqpKtp3nHg8-FlMdIPs9q_q&oq=cheese&gs_lcp=Cgdnd3Mtd2l6EANQlARYxgRghQVoAHAAeACAAQCIAQCSAQCYAQCgAQGqAQdnd3Mtd2l6&sclient=gws-wiz&ved=0ahUKEwi3gv3w4uvwAhXkhf0HHcwJC0EQ4dUDCAc&uact=5
+[INFO ] 2021-05-28 08:45:14.757 [main] Log - Performing a Google search and ariving on https://www.google.com/search?q=cheese&source=hp&ei=dZGwYM3oF96M9u8P8NSS-AM&iflsig=AINFCbYAAAAAYLCfhWgv1ikLYfOnN_XISyoxN6kifG9M&oq=cheese&gs_lcp=Cgdnd3Mtd2l6EANQ1QNYjgRgtgRoAHAAeACAAQCIAQCSAQCYAQCgAQGqAQdnd3Mtd2l6&sclient=gws-wiz&ved=0ahUKEwiN95W84-vwAhVehv0HHXCqBD8Q4dUDCAc&uact=5
+[INFO ] 2021-05-28 08:46:46.671 [main] Log - Navigating to https://orangehrm-demo-6x.orangehrmlive.com/
+[INFO ] 2021-05-28 08:46:49.983 [main] Log - Logging in and ariving on https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard
+[INFO ] 2021-05-28 08:46:50.431 [main] Log - Clicking on candidates card and ariving on https://orangehrm-demo-6x.orangehrmlive.com/client/#/noncore/recruitment/viewCandidates
+[INFO ] 2021-05-28 08:46:54.574 [main] Log - Entering a first name
+[INFO ] 2021-05-28 08:46:54.997 [main] Log - Entering a last name
+[INFO ] 2021-05-28 08:46:55.369 [main] Log - Entering email
+[INFO ] 2021-05-28 08:46:56.505 [main] Log - Setting vacansy email
+[INFO ] 2021-05-28 08:46:56.977 [main] Log - Setting date
+[INFO ] 2021-05-28 08:46:57.104 [main] Log - Adding a resume
+[INFO ] 2021-05-28 08:47:00.606 [main] Log - Saving new candidate
+[INFO ] 2021-05-28 08:47:02.417 [main] Log - Deleting the canidate
+[INFO ] 2021-05-28 08:47:57.135 [main] Log - Navigating to https://orangehrm-demo-6x.orangehrmlive.com/
+[INFO ] 2021-05-28 08:48:00.393 [main] Log - Logging in and ariving on https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard
+[INFO ] 2021-05-28 08:48:00.835 [main] Log - Clicking on candidates card and ariving on https://orangehrm-demo-6x.orangehrmlive.com/client/#/noncore/recruitment/viewCandidates
+[INFO ] 2021-05-28 08:48:06.020 [main] Log - Entering a first name
+[INFO ] 2021-05-28 08:48:06.436 [main] Log - Entering a last name
+[INFO ] 2021-05-28 08:48:06.832 [main] Log - Entering email
+[INFO ] 2021-05-28 08:48:07.883 [main] Log - Setting vacansy email
+[INFO ] 2021-05-28 08:48:08.367 [main] Log - Setting date
+[INFO ] 2021-05-28 08:48:08.504 [main] Log - Adding a resume
+[INFO ] 2021-05-28 08:48:11.981 [main] Log - Saving new candidate
+[INFO ] 2021-05-28 08:48:13.823 [main] Log - Deleting the canidate
+[INFO ] 2021-05-28 08:48:29.220 [main] Log - Navigating to https://orangehrm-demo-6x.orangehrmlive.com/
+[INFO ] 2021-05-28 08:48:32.457 [main] Log - Logging in and ariving on https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard
+[INFO ] 2021-05-28 08:48:32.896 [main] Log - Clicking on candidates card and ariving on https://orangehrm-demo-6x.orangehrmlive.com/client/#/noncore/recruitment/viewCandidates
+[INFO ] 2021-05-28 08:48:36.885 [main] Log - Entering a first name
+[INFO ] 2021-05-28 08:48:37.243 [main] Log - Entering a last name
+[INFO ] 2021-05-28 08:48:37.626 [main] Log - Entering email
+[INFO ] 2021-05-28 08:48:38.695 [main] Log - Setting vacansy email
+[INFO ] 2021-05-28 08:48:39.281 [main] Log - Setting date
+[INFO ] 2021-05-28 08:48:39.420 [main] Log - Adding a resume
+[INFO ] 2021-05-28 08:48:42.815 [main] Log - Saving new candidate
+[INFO ] 2021-05-28 08:48:44.639 [main] Log - Deleting the canidate
+[INFO ] 2021-05-28 08:49:19.039 [main] Log - Performing a Google search and ariving on https://www.google.com/search?q=demoqa.com&source=hp&ei=apKwYPHXF_7j7_UPi4m_iA4&iflsig=AINFCbYAAAAAYLCger-dgqH8aqIAYPTnyDD9u9DGWiBC&oq=demoqa.com&gs_lcp=Cgdnd3Mtd2l6EANQuwNYlQRgywRoAHAAeACAAQCIAQCSAQCYAQCgAQGqAQdnd3Mtd2l6&sclient=gws-wiz&ved=0ahUKEwjxtP-w5OvwAhX-8bsIHYvED-EQ4dUDCAc&uact=5
+[INFO ] 2021-05-28 08:49:19.964 [main] Log - Clicking on the first result and ariving on https://demoqa.com/
+[INFO ] 2021-05-28 08:49:21.959 [main] Log - Draging and droping element
+[INFO ] 2021-05-28 08:49:23.391 [main] Log - Performing a hover action

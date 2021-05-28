@@ -20,6 +20,9 @@ public class Interactions {
 		return Utils.waitToBeClickable(driver, 50,
 				By.xpath("//*[@class='element-list collapse show']//li[@id='item-3']"));
 	}
+	public WebElement tabSimple() {
+		return Utils.waitForElementPresence(driver, 10, By.xpath("//*[@id='droppableExample-tab-simple']"));
+	}
 
 	// Draggable element
 	// Since the id's on this page are not unique I had to combine 2 id's to get the

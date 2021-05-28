@@ -2,43 +2,51 @@ package tests;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Rule;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import pages.AddCandidateForm;
 import pages.Candidates;
 import pages.Dashboard;
 import pages.LoginPageOrangeHRM;
+import setup.BaseClass;
+import setup.Log;
+import setup.ScreenshotTestRule;
 
 @TestInstance(Lifecycle.PER_CLASS)
-public class Test3 {
+public class Test3 extends BaseClass {
 	WebDriver driver;
 	LoginPageOrangeHRM lpOrange;
 	Dashboard dashboard;
 	Candidates candidates;
 	AddCandidateForm addCand;
 
+	@Rule
+    public ScreenshotTestRule screenshotTestRule = new ScreenshotTestRule();
+	
 	@Test
 	public void candidate() throws InterruptedException {
 
 		// logging in(since the form is autofilled we are just pressing the login
 		// button)
 		lpOrange.loginBtn().click();
+		Log.info("Logging in and ariving on " + driver.getCurrentUrl());
 
 		// clicking the recruitment option
 		dashboard.recruitmentCard().click();
 
 		// clicking on the candidates card
 		dashboard.candidates().click();
+		Log.info("Clicking on candidates card and ariving on " + driver.getCurrentUrl());
 
 		// switching to IFrame
 		driver.switchTo().frame("noncoreIframe");
@@ -74,7 +82,7 @@ public class Test3 {
 		// I needed longer time for the page to load again after deleting the candidate
 		// and since the elements I needed after the deletion are already present I
 		// wasn't able to find another way.
-		Thread.sleep(2000);
+		Thread.sleep(2500);
 
 		// asserting that we successfully deleted the candidate
 		assertTrue("The message should be Successfully Deleted",
@@ -89,9 +97,8 @@ public class Test3 {
 	}
 
 	@BeforeAll
-	public void beforeSuite() {
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		driver = new ChromeDriver();
+	public void beforeSuite() throws IOException {
+		driver = initDriver();
 
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
@@ -101,13 +108,15 @@ public class Test3 {
 		driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		driver.get("https://orangehrm-demo-6x.orangehrmlive.com/");
-
+		Log.info("Navigating to " + driver.getCurrentUrl());
+		
 		lpOrange = new LoginPageOrangeHRM(driver);
 		dashboard = new Dashboard(driver);
 		candidates = new Candidates(driver);
 		addCand = new AddCandidateForm(driver);
 
 	}
+	
 
 	@AfterAll
 	public void afterSuite() {

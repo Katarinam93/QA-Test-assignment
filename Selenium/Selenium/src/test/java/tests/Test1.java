@@ -2,26 +2,30 @@ package tests;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Rule;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import pages.Dashboard;
 import pages.Google;
 import pages.Interactions;
 import pages.LandingPageDemoQA;
 import pages.Utils;
 import pages.Widgets;
+import setup.BaseClass;
+import setup.Log;
+import setup.ScreenshotTestRule;
 
 @TestInstance(Lifecycle.PER_CLASS)
-public class Test1 {
+public class Test1 extends BaseClass {
+	
+	@Rule
+    public ScreenshotTestRule screenshotTestRule = new ScreenshotTestRule();
 
 	WebDriver driver;
 	Google google;
@@ -34,9 +38,11 @@ public class Test1 {
 
 		// searching the google
 		google.searchAction("demoqa.com");
-
+		Log.info("Performing a Google search and ariving on " + driver.getCurrentUrl());
+		
 		// clicking the first result
 		google.firstResult().click();
+		Log.info("Clicking on the first result and ariving on " + driver.getCurrentUrl());
 
 		// going to interactions page
 		landingPageDQA.interactionsCard().click();
@@ -47,9 +53,12 @@ public class Test1 {
 
 		// clicking the droppable card on the left
 		interactions.droppableCard().click();
-
-		// performing the drag and drop action
+		
+		Thread.sleep(1000);
+		
+		//performing the drag and drop action
 		interactions.dragAndDropAction();
+		Log.info("Draging and droping element");
 
 		// printing the text from the drop here box which should now be Dropped!
 		System.out.println(interactions.dropHereText());
@@ -71,6 +80,7 @@ public class Test1 {
 
 		// performing the hover action over the button element
 		widgets.performingTheHoverAction(widgets.hoverBtn());
+		Log.info("Performing a hover action");
 
 		// asserting if the text is what we expect
 		assertTrue("The toolTip text should be You hovered over the Button ",
@@ -78,9 +88,8 @@ public class Test1 {
 	}
 
 	@BeforeAll
-	public void beforeSuite() {
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		driver = new ChromeDriver();
+	public void beforeSuite() throws IOException {
+		driver = initDriver();
 
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
@@ -93,6 +102,7 @@ public class Test1 {
 		interactions = new Interactions(driver);
 		widgets = new Widgets(driver);
 	}
+	
 
 	@AfterAll
 	public void afterSuite() {
